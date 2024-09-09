@@ -5,6 +5,7 @@ body {
 }
 
 .container {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -14,8 +15,11 @@ body {
 }
 
 .box {
-  width: 70px;
+  width: 60px;
   height: 70px;
-  background-color: aquamarine;
   margin: 1px;
+}
+
+.hovering {
+  background-color: #ddd;
 }
