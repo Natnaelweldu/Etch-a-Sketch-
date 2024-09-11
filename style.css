@@ -14,10 +14,6 @@ body {
   height: 100vh;
 }
 
-.hovering {
-  background-color: #ddd;
-}
-
 #btnContainer {
   margin: 10px;
 }

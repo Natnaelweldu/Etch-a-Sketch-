@@ -6,12 +6,17 @@ function createGrid(rowCol) {
   for (let i = 0; i <= rowCol; i++) {
     gridArray[i] = [];
     for (let j = 0; j <= rowCol; j++) {
-      const newBox = document.createElement("div");
-      gridArray[i][j] = newBox;
-      newBox.classList.add("box");
-      newBox.style.width = screen.width / rowCol + "px";
-      newBox.style.height = screen.height / rowCol + "px";
-      container.appendChild(newBox);
+      if (container.scrollHeight > container.clientHeight) {
+        console.log("The container is overflowing!");
+        return;
+      } else {
+        const newBox = document.createElement("div");
+        gridArray[i][j] = newBox;
+        newBox.classList.add("box");
+        newBox.style.width = screen.width / rowCol + "px";
+        newBox.style.height = screen.height / rowCol + "px";
+        container.appendChild(newBox);
+      }
     }
   }
 }
@@ -19,10 +24,10 @@ function createGrid(rowCol) {
 createGrid(16);
 
 function applyHoverEffect(element) {
-  element.classList.add("hovering");
+  element.style.backgroundColor = getRandomRGB();
 }
 function removeHoverEffect(element) {
-  element.classList.remove("hovering");
+  element.style.backgroundColor = "#fff";
 }
 
 const hoveringElement = document.addEventListener("mouseover", (e) => {
@@ -39,6 +44,14 @@ document.addEventListener("mouseover", (e) => {
 
 function clearElements() {
   container.innerHTML = "";
+}
+
+function getRandomRGB() {
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+
+  return `rgb(${r},${g},${b})`;
 }
 
 document.addEventListener("DOMContentLoaded", (e) => {
