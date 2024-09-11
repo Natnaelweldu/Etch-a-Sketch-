@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  height: 100vh;
 }
 
 .container {
@@ -11,15 +12,12 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  overflow: hidden;
-}
-
-.box {
-  width: 60px;
-  height: 70px;
-  margin: 1px;
 }
 
 .hovering {
   background-color: #ddd;
+}
+
+#btnContainer {
+  margin: 10px;
 }
