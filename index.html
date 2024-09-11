@@ -8,10 +8,12 @@
     <script src="script.js" defer></script>
   </head>
   <body>
+    <h1 class="title">Etch-a-Sketch</h1>
     <div id="btnContainer">
-      <label for="input">Grid Manager </label>
-      <input type="number" id="input" />
-      <button id="btn">Enter</button>
+      <label for="input">Grid Size: </label>
+      <input type="range" value="16" min="1" max="64" id="input" />
+      <span id="gridSizeBoard">16 x 16</span>
+      <button id="resetBtn">Reset</button>
     </div>
     <div class="container"></div>
   </body>
